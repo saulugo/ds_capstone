@@ -1,0 +1,44 @@
+---
+title: "Notes"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Regular Expressions
+
+##Metacharacters in Regular Expressions
+
+^ the beginning of the line
+        ^I am Saul (it is looking for lines that start with "I am Saul")
+
+$ the end of a line
+	morning$ (it is looking for lines that end with "morning")
+
+[] list a set of characters that will be accepted at a given point in the match
+	[Ss]aul (will accept Saul or saul)
+
+Range of letters or numbers
+	[0-9] [a-zA-Z] (will accept a number from 0 to 9 followed by a letter 
+	either capital or lower case)
+
+^ inside a bracket means that any character that is not the one following the ^
+	[^a] (will accept any character different from 'a')
+
+. is use to express one is looking for any character
+	9.11 (will accept things like '9-11', '9/11', etc)
+
+| is use as a logical OR
+	fire|storm (will accept any line that contains either 'fire' or 'storm'
+
+() are used to constrain an expression
+	^([Gg]ood|[Bb]ad) is looking for lines that start with either 'good'/'Good' or
+	'Bad'/'bad'
+
+? indicates that the expression is optional
+	Saul( F\.)? Lugo (will accept 'Saul F. Lugo' and also 'Saul Lugo')
+
+\ is used to scape a character.
+	\. will not be looking for any character but for the literal character '.'
