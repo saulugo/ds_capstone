@@ -1,4 +1,5 @@
 predict_word <- function(words){
+  words <- tolower(unlist(strsplit(words," ")))
   n <- length(words)
   res <- NA
   
